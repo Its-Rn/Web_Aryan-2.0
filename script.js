@@ -2,27 +2,28 @@ const animateTextTyping = (node) => {
   const text = node.textContent;
   const chars = text.split("");
 
-  node.innerHTML = "";
+  node.textContent = "";
   node.classList.add("typing");
-  i = 0;
+  let i = 0;
 
-  const addNextChar = (i) => {
-    let nextChar = chars[i] === "\n" ? "<br>" : chars[i];
-    node.innerHTML += "<span>" + nextChar + "</span>";
+  const addNextChar = () => {
+    const nextChar = chars[i] === "\n" ? "<br>" : chars[i];
+    node.insertAdjacentHTML("beforeend", `<span>${nextChar}</span>`);
+
     if (i < chars.length - 1) {
-      setTimeout(function () {
-        addNextChar(i + 1);
-      }, 20 + Math.random() * 100);
+      i++;
+      // 4× faster typing speed
+      setTimeout(addNextChar, 10 + Math.random() * 50);
     } else {
-      setTimeout(function () {
+      setTimeout(() => {
         node.classList.remove("typing");
-      }, 20 + Math.random() * 150);
+      }, 10 + Math.random() * 112);
     }
-  }
+  };
 
-  addNextChar(i);
-}
+  addNextChar();
+};
 
 window.onload = () => {
   animateTextTyping(document.getElementById("text"));
-}
+};
