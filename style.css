@@ -7,8 +7,7 @@
 body {
     font-family: Arial, sans-serif;
 
-    /* FIXED: Correct background syntax */
-    background: url("") center/cover no-repeat;
+    
 
     padding: 20px;
 
@@ -79,5 +78,6 @@ body {
         padding: 15px;
     }
 }
+
 
 
