@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 
     /* FIXED: Correct background syntax */
-    background: url("wallpaper.") center/cover no-repeat;
+    background: url("") center/cover no-repeat;
 
     padding: 20px;
 
@@ -79,4 +79,5 @@ body {
         padding: 15px;
     }
 }
+
 
